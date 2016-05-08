@@ -40,7 +40,7 @@ The cycle illustrated in Figure 2 is an infinitely repeating loop that I have ha
 
 図2に描かれたサイクルは、私が20年の間行ない続け、大いに楽しみ、今なお愛している無限に続く繰り返しです。新しいサイクルは常に私を驚かせてくれます。私はプログラムを書くことの意味、ソフトウェアによるアートを作ることの意味を追い求めています。コンピュータへの指示のリストを繰り返し発展させていくことはいつも芸術的な成果と、同じだけの論理的な挑戦をもたらしてくれます。解くことが不可能な挑戦はほとんどありませんでした。特にパズルをより小さなパズルに分割し、助け合うことのできる人たちがいれば尚更です。もしあなたが既にProcessing、Javascript、HTMLとCSSといった他の環境でプログラムを書いたことがあれば、この重要な教訓はひどく当たり前のものに思えるかもしれません。
 
-![Figure 3: 勘違いしないように](images/profit-not.png "Figure 3: Don't get the wrong idea.")
+![図3: 勘違いしないように](images/profit-not.png "Figure 3: Don't get the wrong idea.")
 
 
 For those just now familiarizing themselves with what it means to write small programs, it is important to understand the iterative nature of the code writing process. The anecdote in Figure 3 shows what this process is *not*. Rarely would you ever enter some code into the editor just once, and expect to hit compile and see your finished outcome. It is natural, and commonly accepted for programs to start small, have plenty of mistakes (bugs), and evolve slowly toward a goal of desired outcome or behavior. In fact it is so commonplace that to make the former assumption is a downright programmer's mistake. Even in older days when programs were hand-written on paper, the author still needed to eyeball the code obsessively in order to work out the mistakes; therefore the process was iterative. In learning the C++ language, I will provide tiny code examples that you will be compiling on your machine. The abnormal part is typing the code from the book into the editor, and (provided your fingers do not slip) the program magically runs. I am deliberately removing the troubleshooting experience in order to isolate the subject matter of the C++ language itself. Later on, we will tackle the commonplace task of *debugging* (fixing errors) as a topic all its own.
@@ -50,27 +50,44 @@ For those just now familiarizing themselves with what it means to write small pr
 
 
 ## Compiling My First App
+## 最初のアプリケーションをコンパイルする
 
 Let us start by making the smallest, most immediate C++ program possible, then use the convenient environment to test small snippets of C++ code throughout this chapter. In order to do that, we must have a *compiler*, which is a program that translates some code into an actual runnable app, sometimes referred to as the executable file. C++ compilers are mostly free of charge to download, and in a lot of cases, open source. The apps we generate will not automatically show up in places like Apple's App store, Google Play, Steam, Ubuntu Apps Directory, or Pi Store. Instead, they are your personal, private program files and you will be responsible for manually sharing them later on. In the following chapter *oF Setup and Project Structure*, the compiler will sit on your local computer, able to run offline. For now, we will be impatient and compile some casual C++ on the web using a convenient tool by Sphere Research Labs. Please open your web browser and go to [ideone](http://ideone.com) (http://ideone.com).
 
+できる限り最も小さな、すぐに実行できるC++のプログラムから始めて、それからこの章を通じてC++のスニペット（小さなコードの断片）を試すことになる便利な開発環境を使ってみましょう。そのためには「コンパイラ」が必要です。コンパイラはコードを、実行ファイルとも呼ばれる、実際に走らせることのできるアプリケーションに翻訳してくれるプログラムです。C++のコンパイラの多くは無料でダウンロードでき、多くの場合オープンソースです。これから私たちが作り出すアプリケーションは、AppleのApp StoreやGoogle Play、Steam、Ubuntu Apps Directory、PI Storeなどに勝手に表示されることはありません。あなたの個人的なプログラムで、あなた自身の責任で手動で共有することになります。
+後の「oF Setup and Project Structure」の章ではコンパイラはあなたのローカルのコンピュータの中に置かれ、オフラインで実行できるようになります。しかしまず今は手間をかけず、Sphere Research Labsによる便利なツールを使って、手軽なC++のコードをWeb上でコンパイルすることにします。ブラウザを開いて[ideone](http://ideone.com) (http://ideone.com)へ移動してください。
+
+
 You will notice right away that there is an editor already containing some code, but it may be set to another language. Let's switch the language to C++14 if it is not already in that mode. Down at the bottom left of the editor, press the button just to the left of "stdin", as shown in Figure 4. The label for this button could be any number of things.
 
-![Figure 4](images/where-is-says-java.png "Figure 4")
+エディターの中には既にコードが書かれていることに気づくでしょう。もしかしたら他の言語に設定されているかもしれません。その場合は言語をC++14に切り替えましょう。図4に示すように、エディターの左下、「stdin」の左隣にあるボタンを押してください。このボタンのラベルは図とは違うかもしれません。
+
+![図4](images/where-is-says-java.png "Figure 4")
 
 A menu drops down with a list of programming languages. Please choose C++14, shown in Figure 5.
 
-![Figure 5](images/choose-c14.png "Figure 5")
+プログラム言語の名前のリストが開きます。図5のようにC++14を選んでください。
+
+![図5](images/choose-c14.png "Figure 5")
 
 Notice that the code in the editor changed, and looks something like figure 6.
 
-![Figure 6](images/empty-template.png "Figure 6")
+エディターの中のコードが変わって、図6のようになっているのを確認してください。
+
+![図6](images/empty-template.png "Figure 6")
 
 This is just an empty code template that does nothing, and creates no errors. The numbers in the left hand gutter indicate the line number of the code. Press the green button labeled *Run*. You will see a copy of the code,  "Success" in the comments, and the section labeled *stdin* (standard input) will be empty. *stdout* (standard output) will also be empty.
 
+これはまだ何もしない、何のエラーも起こさない空のコードのテンプレートです。左脇の数字はコードの行番号を示しています。「Run」と書かれた緑色のボタンを押してください。コードのコピーと「Success」というコメントが見えるでしょう。「stdin（standard input）」と書かれた箇所は空欄（Standard input is empty）のはずです。「stdout（standard output）」も同じく空です。
+
 
 ### Interlude on Typography
+### タイポグラフィーについての間奏
 
 Most fonts on the web are variable width, meaning the letters are different widths; the eye finds that comfortable to read. Fonts can also be fixed-width, meaning all the letters (even the W and the lowercase i) are the same width. Although this may look funny and quaint like a typewriter, it serves an important purpose. A fixed width font makes a block of text into a kind of game board, like chess squares or graphing paper. Computer programming code is generally presented in fixed-width typesetting, because it is a form of ASCII-art. The indentation, white space characters, and repetitive patterns are all important to preserve and easily eyeball for comparison. Every coder I know except artist Jeremy Rotsztain uses some manner of monospaced font for their code. Some typeface suggestions are Courier, Andale Mono, Monaco, Profont, Monofur, Proggy, Droid Sans Mono, Deja Vu Sans Mono, Consolas, and Inconsolata. From now on, you will see the font style switch to `this inline style` . . .
+
+Web上のほとんどの（欧文）フォントは文字ごとに幅が異なります。その方が読みやすいからです。固定幅、つまりすべての文字（大文字のWと小文字のiでさえも）の幅が同じになっているフォントもあります。ちょっと変でタイプライターみたいに古臭く見えるかもしれませんが、これには大事な意味があります。コンピュータプログラムのコードはある種アスキーアートなので、一般には等幅の文字組で表示されます。楽に見比べられるよう、インデント、空白文字、繰り返しのパターンが保たれることが重要です。アーティストのJeremy Rotsztain以外、私の知る限りのコーダーは何らかの等幅フォントを使っています。いくつかタイプフェイスの例を挙げると、
+Courier、Andale Mono、Monaco、Profont、Monofur、Proggy、Droid Sans Mono、Deja Vu Sans Mono、Consolas、Inconsolataなどがあります。ここからはこのスタイル `this inline style` や、下記のようなブロックを目にすることになるでしょう。
 
 ```cpp
 and this style encased in a block . . .
@@ -78,19 +95,30 @@ and this style encased in a block . . .
 
 . . . and that just means you are looking at some code.
 
+これらのスタイル単にこれらの部分がコードであることを示してます。
+
 ### Comments
+
+### コメント
 
 Now please press *Edit* (Figure 7) at the top left of the code editor.
 
-![Figure 7](images/ideone-edit.png "Figure 7")
+では左上の「Edit」（図7）を押してください。
+
+![図7](images/ideone-edit.png "Figure 7")
 
 You will see a slightly different editing configuration but the same template code will still be editable at the top. We will now edit the code. Find line 5, where it says:
+
+少しエディタの形が変わりましたが、同じテンプレートのコードが表示され編集可能になっています。これからコードを編集します。5行目に下記のように書かれているのを見てください。
+
 
 ```cpp
 // your code goes here .
 ```
 
 A line beginning with a double forward slash is called a comment. You may type anything you need to in order to annotate your code in a way you understand. Sometimes it's useful to “comment out code” by placing two forward-slashes before it, because that deactivates the C++ code without deleting it. Comments in C++ can also take up multiple lines, or insert like a tag. The syntax for beginning and ending comment-mode is different. Everything between the `/* and the */` becomes a comment:
+
+二つのスラッシュで始まる行はコメントと呼ばれています。コードには、分かりやすいように好きなように注釈を付けることができます。時にはコードの前位にスラッシュを二つ書き加えて「コメントアウト」するのも役に立ちます。こうするとC++のコードを、削除せずに無効にすることができます。C++のコメントは複数の行にまたがったり、タグのように付け加えることもできます。コメントモードの開始と終了のための構文は別にあります。「/\*」と「\*/」に挟まれた部分はすべてコメントとして扱われます。
 
 
 ```cpp
@@ -102,15 +130,24 @@ still in comment mode.
 
 Please delete the code on line 5 and replace it with the following statement:
 
+5行目を削除して、下記の命令文で置き換えてください。
+
 ```cpp
 cout << "Hello World" << endl;
 ```
 
 This line of code tells the computer to say "Hello World" into an implied text-space known as *standard output* (aka. *stdout*). When writing a program, it is safe to expect *stdout* to exist. The program will be able to "print" text into it. Other times, it's just a window pane in your coding tool~~,~~ only used ~~to troubleshoot~~ for troubleshooting **[t: better phrasing?]**.
 
+このコードはコンピュータに「Hello World」という文字列を標準出力（standard output、stdout）と呼ばれる、暗黙的に決まっているテキストの出力先に送るように指示します。プログラムを書いている時には、プログラムが文字列を書き出すことのできる、何らかの標準出力が存在すると考えてよいでしょう。それはあなたのコーディングツールのウィンドウペインの一つでデバッグのためだけに使われるかもしれません。
+
 You may put almost anything between those quotes. The quoted phrase is a called a *string* of text. More specifically, it is a *c-string literal*. We will cover more on strings later in this chapter. In the code, the chunk `cout <<` part means "send the following stuff to stdout in a formatted way." The last chunk `<< endl` means "add a carriage return (end-of-line) character to the end of the hello world message." Finally, at the very end of this line of code, you see a semicolon (;).
 
+引用符の間にはほとんど何でも書くことができます。引用符の間の文字は文字列（string）と呼ばれます。もっと厳密に言うとこれは、「cの文字リテラル」です。文字列についてはこの章で後ほどより深く取り上げます。このコードの `cout <<` の部分は、「この後続く内容を整形して標準出力に送れ」という意味です。後の `<< endl` はこの挨拶の文の終わりに「キャリッジリターン（終行文字）を付け加えろ」という意味です。そして行の一番最後にはセミコロン「;」があります。
+
 In C++, semicolons are like a full stop or period at the end of the sentence. We must type a semicolon after each statement, and usually this is at the end of the line of code. If you forget to type that semicolon, the compile fails. Semicolons are useful because they allow multiple statements to share one line, or a single statement to occupy several lines, freeing the programmer to be flexible and expressive with one's whitespace. By adding a semicolon you ensure that the compiler does not get confused: you help it out and show it where the statement ends. When first learning C or C++, forgetting the semicolon can be an extremely common mistake, and yet it is necessary for the code to compile. Please take extra care in making sure your code statements end in semicolons.
+
+C++ではセミコロンは文末のピリオドのようなものです。命令文の後には必ずセミコロンを打たなくてはなりません。これは普通、行の終わりになります。セミコロンを打ち忘れるとコンパイルは失敗します。セミコロンは便利で、このおかげでプログラマは、一つの行に複数の命令文を書いたり、一つの命令文を複数行にわたって書くなど、空間を柔軟に使って表現することができます。セミコロンを付け加えることで、コンパイラが混乱しないように、どこで命令文が終わるのかを明確に示しているのです。セミコロンを忘れるのはCやC++の学び始めに非常に良く起きるミスですが、セミコロンはコードがコンパイルされるために必要です。良く注意して命令文がセミコロンで終わっているのを確かめるようにしてください。
+
 
 While you typed, perhaps you noticed the text became multi-colored all by itself. This convenient feature is called *syntax-coloring* (or syntax-highlighting) and can subconsciously enhance one's ability to read the code, troubleshoot malformed syntax, and assist in searching. Each tool will have its own syntax coloring system so if you wish to change the colors, please expect that it's not the same thing as a word processor, whose coloring is something you add to the document yourself. A code editor will not let me assign the font "TRON.TTF" with a glowing aqua color to *just* `endl` (which means end-of-line). Instead, I can choose a special style for a whole category of syntax, and see all parts of my code styled that way as long as it's that type of code. In this case, both `cout` and `endl` are considered keywords and so the tool colors them black. If these things show up as different colors elsewhere, please trust that it's the same code as before, since different code editors provide different syntax coloring. The entire code should now look like this:
 
@@ -126,7 +163,7 @@ int main(){
 
 Now press the green *ideone it!* button at the bottom right corner and watch the output console, which is the bottom half of the code editor, just above that green button. You will see orange status messages saying things like “Waiting for compilation,” “Compilation,” and “Running”. Shortly after, the program will execute in the cloud and the standard output should show up on that web page. You should see the new message in Figure 8.
 
-![Figure 8](images/hello-world.png "Figure 8: Hello World appears in output window")
+![図8](images/hello-world.png "Figure 8: Hello World appears in output window")
 
 You made it this far. Now give yourself a pat on the back. You just wrote your first line of C++ code; you analyzed it, compiled it, ran it, and saw the output.
 
@@ -240,11 +277,11 @@ This is the first piece of code that has a beginning and an end, such that it "w
 
 In C++, we enclose groups of code statements inside functions, and each function can be seen as a little program inside the greater program, as in the simplified diagram in figure 9.
 
-![Figure 9: Many Functions](images/program-anatomy.png "Figure 9. A program contains many functions, and each function contains zero or more statements.")
+![図9: Many Functions](images/program-anatomy.png "Figure 9. A program contains many functions, and each function contains zero or more statements.")
 
 Each of these functions has a name by which we can call it. To call a function is to execute the code statements contained inside that function. The basic convenience in doing this is less typing, and we will talk about the other advantages later. Like a board game, a program has a starting position. More precisely, the program has an *entry-point* expected by the compiler to be there. That entry-point is a function called *main*. The code you write inside the *main* function is the first code that executes in your program, and therefore it is responsible for calling any other functions in your program. Who calls your *main* function? The operating system does! Let's break down the syntax of the main function in this demo. Again, for all you Processing coders, this is old news.
 
-![Figure 10: The Function](images/function-anatomy.png)
+![図10: The Function](images/function-anatomy.png)
 
 When defining a function, the first token is the advertised return type. Functions can optionally return a value, like an answer to a question, a solution to a problem, the result of a task, or the product of a process. In this case, *main* promises to return an `int`, or *integer* type, which is a whole number with no fraction or decimal component. Next token is the name of our function. The system expects the word "main" in all lower-case, but you will later define your own functions and we will get into naming. Next is an opening and closing parenthesis. Yes, it seems kind of strange to have it there, since there is nothing inside it. Later, we will see what goes in there — but never leave out the pair of parentheses with functions because in a certain way, that is the major hint to the human that it's a function. In fact, from now on, when I refer to a function by name. I'll suffix it with a ( ), for example `main()` when the function requires no parameter and I'll suffix it with a (...), for example `main(...)`, when the function requires one or more parameters
 
@@ -305,7 +342,7 @@ int main(){
 
 Getting back to the previous example, those five lines of code are all ***function calls***. They are telling `greet(...)` to execute, and passing it the one string argument so it can do its job. That one string argument is made available to `greet(...)`'s inner code via the argument called `person`. To see the order of how things happen, take a look at Figure 11.
 
-![Figure 11. Function Call Flow](images/function-call.png "Figure 11. Function Call Flow")
+![図11. Function Call Flow](images/function-call.png "Figure 11. Function Call Flow")
 
 The colorful line in Figure 11 is the path drawn by an imaginary playback head that steps over the code as it executes. We start at the blue part and go in through the main entry-point, then encounter `greet(...)`, which is where a *jump* happens. As the line turns green, it escapes out of `main()` temporarily so it can go follow along `greet(...)` for a while. About where the line turns yellow, you see it finished executing the containing code inside `greet(...)` and does a second jump (the return) this time going back to the previous saved place, where it continues to the next statement. The most obvious advantage we can see in this example is the reduction of complexity from that long `cout` statement to a simple call to `greet(...)`. If we must call `greet(...)` five times, having the routine *encapsulated* into a function gives it convenience power. Let's say you wanted to change the greeting from "Good night" to "Show's over ". Rather than updating all the lines of code you cut-and-pasted, you could just edit the one function, and all the uses of the function would change their behavior along with it, in a synchronized way. Furthermore, code can grow to be pretty complex. It helps to break it down into small routines, and use those routines as your own custom building blocks when thinking about how to build the greater software. By using functions, you are liberated from the need to meticulously represent every detail of your system; therefore a function is one kind of *abstraction* just like abstraction in art. This sort of abstraction is called *encapsulation of complexity* because it's like taking the big complex thing and putting it inside a nice little capsule, making that big complex thing seem smaller and simpler. It's a very powerful idea — not just in code.
 
@@ -313,11 +350,11 @@ The colorful line in Figure 11 is the path drawn by an imaginary playback head t
 
 Imagine actor Laurence Fishburne wearing tinted pince-nez glasses, offering you two options that are pretty complicated to explain. On the one hand, he is willing to help you escape from the evil Matrix so that you may fulfill your destiny as the hacker hero, but it involves living life on life's terms and that is potentially painful but whatever. The story must go on and by the way, there is a pretty girl. On the other hand, he is also willing to let you forget this all happened, and mysteriously plant you back in your tiny apartment where you can go on living a lie, none the wiser. These two options are explained in the movie *The Matrix* and then the main character is offered the choice in the form of colored pills, as a way to simplify an otherwise wordy film scenario. The two complex choices are encapsulated into a simple analogy that is much easier for movie audiences to swallow. See Figure 12.
 
-![Figure 12. Red Pill and Blue Pill from The Matrix](images/red-blue-pills.png "Figure 12. Red Pill and Blue Pill from The Matrix")
+![図12. Red Pill and Blue Pill from The Matrix](images/red-blue-pills.png "Figure 12. Red Pill and Blue Pill from The Matrix")
 
 Rather than repeating back the entire complicated situation, Neo (the main character) needed only to swallow one of the pills. Even if it were real medicine, the idea of encapsulating complexity still applies. Most of us do not have the expertise to practice medicine in the most effective way, and so we trust physicians and pharmacologists to create just the right blend of just the right herbs and chemicals. When you swallow a pill, it is like calling that function because you have the advantage of not needing to understand the depths of the pill. You simply trust that the pill will cause an outcome. The same is true with code. Most of the time, a function was written by someone else, and if that person is a good developer, you are free to remain blissfully ignorant of their function's inner workings as long as you grasp how to properly call their function. In this way, you are the *higher-level* coder, meaning that you simply call the function but you did not write it. Someone who creates a project in openFrameworks is sitting on the shoulders of the openFrameworks layer. openFrameworks sits on the shoulders of the OpenGL Utility Toolkit, which sits on OpenGL itself, and so on. In other words, an openFrameworks project is a *higher-level* application of C++, a language with a reputation for *lower-level* programming. As illustrated in Figure 13, I sometimes run into a problem when I tell people I wrote an interactive piece in C++.
 
-![Figure 13. Standing on Shoulders of Giants](images/shoulders-of-giants.png "Figure 13. Standing on Shoulders of Giants")
+![図13. Standing on Shoulders of Giants](images/shoulders-of-giants.png "Figure 13. Standing on Shoulders of Giants")
 
 There are a few advantages to using C++ over the other options (mostly scripting) for your new media project. The discussion can get quite religious (read: heated) among those who know the details. If you seek to learn C++, then usually it is because you seek faster runtime performance, because C++ has more libraries that you can snap into your project, or because your mentor is working in that language. An oF project is considered higher-level because it is working with a greater encapsulation of complexity, and that is something to be proud of.
 
@@ -371,7 +408,7 @@ int main(){
 
 Now that I am using the variable `answer`, I only need to change that one number in my code, and it will show up in all three sentences as 42. That can be more elegant than find-and-replace. Figure 18 shows the syntax explanation for declaring and initializing a variable on the same line.
 
-![Figure 18. Variable declaration and initialization](images/variable-declaration.png "Figure 18. Variable declaration and initialization")
+![図18. Variable declaration and initialization](images/variable-declaration.png "Figure 18. Variable declaration and initialization")
 
 It is also possible to declare a variable and initialize it on two separate lines. That would look like:
 
@@ -443,7 +480,7 @@ More obsessively, programmers may sometimes use what is affectionately nicknamed
 
 We call them variables because their values *vary* during runtime. They are most useful as a bucket where we put something (let's say water) for safe keeping. As that usually goes, we end up going back to the bucket and using some of the water, or mixing a chemical into the water, or topping up the bucket with more water, etc. A variable is like an empty bucket where you can put your stuff. Figure 19 shows a bucket from the game *Minecraft*.
 
-![Figure 19. Bucket, courtesy of Mojang AB](images/minecraft-bucket.png "Figure 19. Bucket, courtesy of Mojang AB")
+![図19. Bucket, courtesy of Mojang AB](images/minecraft-bucket.png "Figure 19. Bucket, courtesy of Mojang AB")
 
 If a computer program is like a little brain, then a variable is like a basic unit of remembrance. Jotting down a small note in my sketchbook is like storing a value into a variable for later use. Let's see an example of a variable changing its value.
 
@@ -470,7 +507,7 @@ int main(){
 
 The output should be `012345`. Notice the use of the equal sign. It is different than what we are accustomed to from arithmetic. In the traditional context, a single equal sign means the expressions on both sides would evaluate to the same value. In C, that is actually a double equal (==) and we will talk about it later. A single equal sign means "Solve the expression on the right side and store the answer into the variable named on the left side". It takes some getting used to if you haven't programmed before. If I were a beginning coder (as my inner child is perpetually), I would perhaps enjoy some alternative syntax to command the computer to store a value into a variable. Something along the lines of: `3 => counter` as found in the language *ChucK* by Princeton sound lab, or perhaps something a bit more visual, as my repurposing of the Minecraft crafting table in figure 20.
 
-![Figure 20. Minecraft crafting table repurposed for variable assignment](images/minechuck.png "Figure 20. Minecraft crafting table repurposed for variable assignment")
+![図20. Minecraft crafting table repurposed for variable assignment](images/minechuck.png "Figure 20. Minecraft crafting table repurposed for variable assignment")
 
 The usefulness of having the variable name on the left side rather than the right becomes apparent in practice since the expressions can get quite lengthy! Beginning a line with `varname =` ends up being easier for the eyeball to scan because it's guaranteed to be two symbols long before starting in on whatever madness you plan on typing after the equals sign.
 
@@ -499,11 +536,11 @@ int main(){
 
 The output should still be `012345`. By saying `counter = counter + 1`, I am incrementing `counter` by 1. More specifically, I am using `counter` in the right-hand "addition" expression, and the result of that (one moment later) gets stored into `counter`. This seems a bit funny because it talks about `counter` during two different times. It reminds me of the movie series, *Back to the Future*, in which Marty McFly runs into past and future versions of himself. See Figure 21.
 
-![Figure 21. The future Marty uses the past Marty](images/futuremarty.png "Figure 21. The future Marty uses the past Marty")
+![図21. The future Marty uses the past Marty](images/futuremarty.png "Figure 21. The future Marty uses the past Marty")
 
 Great Scott, that could make someone dizzy! But after doing it a few times, you'll see it doesn't get much more complicated than what you see there. This is a highly *practical* use of science fiction, and you probably aren't attempting to challenge the fabric of spacetime (unless you are Kyle McDonald, or maybe a Haskell coder<!-- i mean these things as a high compliment, not as mockery -->). The point here is to modify the contents of computer memory, so we have `counter` from one instruction ago, in the same way that there might already be water in our bucket when we go to add water to it. Figure 22 shows `bucket = bucket + water`.
 
-![Figure 22. bucket = bucket + water](images/minecraft-inc.png "Figure 22. bucket = bucket + water")
+![図22. bucket = bucket + water](images/minecraft-inc.png "Figure 22. bucket = bucket + water")
 
 Incrementing by one, or adding some value to a variable is in fact so commonplace in all programming that there is even syntactic sugar for it. *Syntactic Sugar* is a redundant grammar added to a programming language for reasons of convenience. It helps reduce typing, can increase comprehension or expressiveness, and (like sugar) makes the programmer happier. The following statements all add 1 to `counter`.
 
