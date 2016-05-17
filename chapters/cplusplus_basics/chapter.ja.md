@@ -32,7 +32,7 @@ This fractal, the famous [Sierpinski triangle](https://www.wolframalpha.com/inpu
 
 My mind was officially blown. Certain things did not make sense. What sort of miracle of nature caused such a complex form to come from so little instruction? The screen had over six thousand pixels in it, so why is it that a mere twenty-five instructions was all it took to create this amazing, organism-like artwork? Whose artwork was it? Might I derive a new work from it? Rarely had I ever seen such a magical reward coming from so little work. I had found my new basics. I felt the need to understand the program because (I decided) it was important. I went back into the code and changed some of the numbers, then ran the program again. The screen went blank, then drew a different picture, only this time, skewed to the left, falling out of the viewport. Feeling more courageous, I attempted to change one of the English instructions, and the machine showed an error, failing to run.
 
-本当にぶっ飛びました。何か理解できないことが起きています。どんな奇跡が起きてこんな複雑な形が、ほんの短い指示によって生み出されたのでしょう。画面には6000以上のピクセルがあります。なぜ、たった25行の指示だけでこの素晴らしい有機物のような作品を作ることができるのか。ここから違う作品を作ることもできるのか。本当に少しの仕事でこんな魔法のような成果が得られるなんてほとんど見たことがありません。私は自分の新しい基礎になるものを見つけました。このプログラムは重要で、理解する必要があることだと思いました。私はコードに立ち戻っていくつかの数値を変えてもう一度実行してみました。画面は真っ白になり、それから違う形を描き出しました。今回のものは左に傾いて画面からはみ出しています。勇気を得た私は英語で書かれた指示の一つを書き換えてみました。実行に失敗した計算機はエラーを表示しました。
+本当に驚きました。何か理解できないことが起きています。どんな奇跡が起きてこんな複雑な形が、ほんの短い指示によって生み出されたのでしょう。画面には6000以上のピクセルがあります。なぜ、たった25行の指示だけでこの素晴らしい有機物のような作品を作ることができるのか。ここから違う作品を作ることもできるのか。本当に少しの仕事でこんな魔法のような成果が得られるなんてほとんど見たことがありません。私は自分の新しい基礎になるものを見つけました。このプログラムは重要で、理解する必要があることだと思いました。私はコードに立ち戻っていくつかの数値を変えてもう一度実行してみました。画面は真っ白になり、それから違う形を描き出しました。今回のものは左に傾いて画面からはみ出しています。勇気を得た私は英語で書かれた指示の1つを書き換えてみました。実行に失敗した計算機はエラーを表示しました。
 
 ![図2: プログラマー試行の輪](images/programmer-cycle.png "Figure 2: The human loop of a programmer.")
 
@@ -138,7 +138,7 @@ cout << "Hello World" << endl;
 
 This line of code tells the computer to say "Hello World" into an implied text-space known as *standard output* (aka. *stdout*). When writing a program, it is safe to expect *stdout* to exist. The program will be able to "print" text into it. Other times, it's just a window pane in your coding tool~~,~~ only used ~~to troubleshoot~~ for troubleshooting **[t: better phrasing?]**.
 
-このコードはコンピュータに「Hello World」という文字列を標準出力（standard output、stdout）と呼ばれる、暗黙的に決まっているテキストの出力先に送るように指示します。プログラムを書いている時には、プログラムが文字列を書き出すことのできる、何らかの標準出力が存在すると考えてよいでしょう。それはあなたのコーディングツールのウィンドウペインの一つでデバッグのためだけに使われるかもしれません。
+このコードはコンピュータに「Hello World」という文字列を標準出力（standard output、stdout）と呼ばれる、暗黙的に決まっているテキストの出力先に送るように指示します。プログラムを書いている時には、プログラムが文字列を書き出すことのできる、何らかの標準出力が存在すると考えてよいでしょう。それはあなたのコーディングツールのウィンドウペインの1つでデバッグのためだけに使われるかもしれません。
 
 You may put almost anything between those quotes. The quoted phrase is a called a *string* of text. More specifically, it is a *c-string literal*. We will cover more on strings later in this chapter. In the code, the chunk `cout <<` part means "send the following stuff to stdout in a formatted way." The last chunk `<< endl` means "add a carriage return (end-of-line) character to the end of the hello world message." Finally, at the very end of this line of code, you see a semicolon (;).
 
@@ -146,10 +146,13 @@ You may put almost anything between those quotes. The quoted phrase is a called 
 
 In C++, semicolons are like a full stop or period at the end of the sentence. We must type a semicolon after each statement, and usually this is at the end of the line of code. If you forget to type that semicolon, the compile fails. Semicolons are useful because they allow multiple statements to share one line, or a single statement to occupy several lines, freeing the programmer to be flexible and expressive with one's whitespace. By adding a semicolon you ensure that the compiler does not get confused: you help it out and show it where the statement ends. When first learning C or C++, forgetting the semicolon can be an extremely common mistake, and yet it is necessary for the code to compile. Please take extra care in making sure your code statements end in semicolons.
 
-C++ではセミコロンは文末のピリオドのようなものです。命令文の後には必ずセミコロンを打たなくてはなりません。これは普通、行の終わりになります。セミコロンを打ち忘れるとコンパイルは失敗します。セミコロンは便利で、このおかげでプログラマは、一つの行に複数の命令文を書いたり、一つの命令文を複数行にわたって書くなど、空間を柔軟に使って表現することができます。セミコロンを付け加えることで、コンパイラが混乱しないように、どこで命令文が終わるのかを明確に示しているのです。セミコロンを忘れるのはCやC++の学び始めに非常に良く起きるミスですが、セミコロンはコードがコンパイルされるために必要です。良く注意して命令文がセミコロンで終わっているのを確かめるようにしてください。
+C++ではセミコロンは文末のピリオドのようなものです。命令文の後には必ずセミコロンを打たなくてはなりません。これは普通、行の終わりになります。セミコロンを打ち忘れるとコンパイルは失敗します。セミコロンは便利で、このおかげでプログラマは、1つの行に複数の命令文を書いたり、1つの命令文を複数行にわたって書くなど、空間を柔軟に使って表現することができます。セミコロンを付け加えることで、コンパイラが混乱しないように、どこで命令文が終わるのかを明確に示しているのです。セミコロンを忘れるのはCやC++の学び始めに非常に良く起きるミスですが、セミコロンはコードがコンパイルされるために必要です。良く注意して命令文がセミコロンで終わっているのを確かめるようにしてください。
 
 
 While you typed, perhaps you noticed the text became multi-colored all by itself. This convenient feature is called *syntax-coloring* (or syntax-highlighting) and can subconsciously enhance one's ability to read the code, troubleshoot malformed syntax, and assist in searching. Each tool will have its own syntax coloring system so if you wish to change the colors, please expect that it's not the same thing as a word processor, whose coloring is something you add to the document yourself. A code editor will not let me assign the font "TRON.TTF" with a glowing aqua color to *just* `endl` (which means end-of-line). Instead, I can choose a special style for a whole category of syntax, and see all parts of my code styled that way as long as it's that type of code. In this case, both `cout` and `endl` are considered keywords and so the tool colors them black. If these things show up as different colors elsewhere, please trust that it's the same code as before, since different code editors provide different syntax coloring. The entire code should now look like this:
+
+コードを打っている間、テキストに勝手に色がついていくのに気付いたでしょう。この便利な機能はシンタックスカラーリング（またはシンタックスハイライト）と呼ばれていて、コードを読んだり、文法の間違いを直したり、何かを見つけたりするのを無意識のうちに助けてくれます。ツールごとにそれぞれのシンタックスカラーリングの仕組みがあります。これはワードプロセッサーの文書に色を着ける機能とは違うものだと考えてください。コードエディターは `endl`（行の終わりを意味します） だけを明るい水色のTRON.TTFにしたいと思ってもそうはさせてくれません。その代わりに、構文上のカテゴリーに対して特別なスタイルを選ぶことができ、コードの同じ種類の部分に全てに選んだスタイルを適用させることができます。今の例では、`cout` と `endl` は両方ともキーワード（予約語）と見做されるので、ツールはこれらを黒い文字で表示します。違うコードエディターは違うシンタックスカラーリングをするので、もし別の場所でこれらのキーワードが別の色で表示されているのを見ても、コードとしては同じものだと信じてください。コード全体は下記のようになっているはずです。
+
 
 ```cpp
 #include <iostream.h>
@@ -163,13 +166,20 @@ int main(){
 
 Now press the green *ideone it!* button at the bottom right corner and watch the output console, which is the bottom half of the code editor, just above that green button. You will see orange status messages saying things like “Waiting for compilation,” “Compilation,” and “Running”. Shortly after, the program will execute in the cloud and the standard output should show up on that web page. You should see the new message in Figure 8.
 
+では右下にある緑の「ideone it!」ボタンを押し、コードエディターの下半分にある出力コンソールを見てください。オレンジ色で、「Waiting for compilation」、「Compilation」、「Running」というステータスが表示されます。程なくプログラムはクラウド上で実行され標準出力に送った内容がページ上に表示されます。図8のようにメッセージが表示されているはずです。
+
 ![図8](images/hello-world.png "Figure 8: Hello World appears in output window")
 
 You made it this far. Now give yourself a pat on the back. You just wrote your first line of C++ code; you analyzed it, compiled it, ran it, and saw the output.
 
+目標達成です。自分で自分を褒めてあげましょう。あなたはC++で初めての一業を書き上げ、分析し、コンパイルして、実行し、結果が出力されるの見たのです。
+
 ## Beyond Hello World
+## Hello World を超えて
 
 Now that we've gotten our feet wet, let's go back and analyze the other parts of the code. The first line is an include statement:
+
+一歩目を踏み出したところで、ちょっと戻ってコードの他の部分を分析してみましょう。一行目はinclude文です。
 
 ```cpp
 #include <iostream>
@@ -177,15 +187,23 @@ Now that we've gotten our feet wet, let's go back and analyze the other parts of
 
 Similar to *import* in Java and CSS, `#include` is like telling the compiler to cut and paste some other useful code from a file called *iostream.h* at that position in the file, so you can depend on its code in your new code. In this case, iostream.h *provides* `cout` and `endl` as tools I can use in my code, just by typing their names. In C++, a filename ending in **.h** is called a header file, and it contains code you would include in an actual C++ implementation file, whose filename would end in **.cpp**. There are many standard headers built into C++ that provide various basic services – in fact too many to mention here. If that wasn't enough, it's also commonplace to add an external library to your project, including its headers. You may also define your own header files as part of the code you write, but the syntax is slightly different:
 
+JavaやCSSの「import」と同様に `#include` はコンパイラに、「iostream.h」というファイルから役に立つコードをあなたの新しいコードの中で使得るよう切り取ってくるように指示しています。この例ではiostream.hは `cout` と `endl` を名前をタイプするだけで使えるように提供してくれています。C++では名前が「.h」で終わるファイルはヘッダファイルと呼ばれ、実際のC++の実装ファイルに取り込む（include）するコードを格納しています。C++には多すぎてここでは触れられないくらいの標準のヘッダが組み込まれていて、様々な機能を提供しています。もしそれでも足りなければ、外部のライブラリをヘッダをインクルードしてプロジェクトに加えることも一般的に行われています。あなた自身のコードの一部として自分自身でヘッダを定義することもできますが、その場合には少し違う構文を使います。
+
 ```cpp
 #include "MyCustomInclude.h"
 ```
 
 In openFrameworks, double quotes are used to include header files that are not part of the system installation.
 
+openFrameworksではダブルクォートをシステム標準ではないヘッダファイルを取り込むのために用います。
+
+
 ### What's with the # ?
+### #について
 
 It's a whole story, but worth understanding conceptually. The include statement is not really C++ code (notice the absence of semicolon). It is part of a completely separate compiler pass called *preprocessor*. It happens before your actual programmatic instructions are dealt with. They are like instructions for the code compiler, as opposed to instructions for the computer to run after the compile. Using a pound/hash symbol before these *preprocessor directives*, one can clearly spot them in the file, and for good reason too. They should be seen as a different language, mixed in with the real C++ code. There aren't many C++ preprocessor directives — they are mostly concerned with herding other code. Here are some you might see.
+
+長い話になりますが、概念を理解しておくだけの価値はあります。include分は実際にはC++のコードではありません（セミコロンがついていませんね）。これは全く別の「プリプロセッサ」と呼ばれるものの一部です。この処理は実際のプログラムの命令が処理される前に実行されます。プリプロセッサは、コンパイル後にコンピューターに実行させるための命令ではなく、コンパイラに対する指示のようなものです。#（ハッシュ、またはパウンド）をこれらのプリプロセッサ用の指示（preprocessor directive）に付け加えることで、いい意味ではっきり見分けられるようになります。これらの指示は本物のC++のコードに混ぜられた別の言語見做されるべきなのです。C++のプリプロセッサはたくさんはありません。多くは他のコードを集めてくるためのものです。下記に幾つかあなたが見かける可能性のあるものを挙げます。
 
 `#define`
 `#elif`
@@ -201,11 +219,15 @@ It's a whole story, but worth understanding conceptually. The include statement 
 
 Let's do an experiment. In the code editor, please comment out the include directive on line 1, then run the code. To comment out the line of code, insert two adjacent forward-slashes at the beginning of the line.
 
+1つ実験をしてみましょう。コードエディターで1行めの指示をコメントアウトしてコードを実行してみてください。行をコメントアウトするには、行頭にスラッシュを2つ続けて挿入します。
+
 ```cpp
 //#include <iostream>
 ```
 
 The syntax coloring will change to all green, meaning it's now just a comment. Run the code by pressing the big green button at the bottom right, and you'll see something new in the output pane.
+
+行全体がただのコメントになったことを示して、シンタックスカラーリングが緑色に変わります。右下の大きな緑のボタンを押してコードを実行しましょう。Outputペインになにか表示されるはずです。
 
 ```
 prog.cpp: In function 'int main()':
@@ -219,13 +241,19 @@ prog.cpp:5:27: error: 'endl' was not declared in this scope
 
 The compiler found an error and did not run the program. Instead, in an attempt to help you fix it, the compiler is showing you where it got confused. The first part, *prog.cpp*: tells you the file that contains the error. In this case, ideone.com saved your code into that default file name. Next, it says `In function 'int main()'`: file showing you the specific section of the code that contains the error, in this case, between the {curly brace} of a function called *main*. (We will talk about functions and curly braces later). On the next line, we see `prog.cpp:5:2:`. The 5 is how many lines from the top of the file, and 2 is how many characters rightward from the beginning of the line. Next, we see `error: 'cout' was not declared in this scope`. That is a message describing what it believes is wrong in the code. In this case, it's fairly correct. iostream.h is gone, and therefore no `cout` is provided to us, and so when we try to send "Hello World", the compile fails. On the next couple of lines, you see the line of code containing the fallacious `cout`, plus an extra little up-caret character on the line beneath it, and that is supposed to be an arrow pointing at a character in the code. In this case, the arrow should be sitting beneath the 'c' in `cout`. The system is showing you visually which token is at fault. A second error is shown, and this time, the compiler complains that there is no endl. Of course, we know that in order to fix the error, we need to include `<iostream.h>` so let us do that now. Please un-comment line 1 and re-run the code.
 
+コンパイラはエラーを発見したので、プログラムの実行を行いませんでした。その代わりに、間違いの修正を助けるため、コンパイラはどこで混乱したのかを示してくれています。最初の「prog.cpp」はエラーが含まれているファイルを指しています。この例では、ideone.comはあなたのコードをデフォルトのファイル名で保存しています。次に　`In function 'int main()'`　と書かれています。これはエラーが含まれている特定の箇所を示しています。この場合は「main」という名前の関数の {波括弧}の間です（関数と波括弧については後ほど説明します）。次の行には`prog.cpp:5:2:`とあります。この5はファイルの初めから何行目かを、2は行の初めから右に数えて何文字めかを表しています。さらに `error: 'cout' was not declared in this scope` と表示されています。これはコンパイラがコードのどこが間違っていると考えているか説明するメッセージです。この例のメッセージはかなり正しいと言えます。iostream.hがなくなり、`cout` は提供されていないので「Hello World」を送ろうとした時にコンパイルが失敗するのです。続く数行にはこの間違った `cout` と、その下に小さなキャレット（^）が見えます。このキャレットはコードの中の文字を指し示しす矢印の役割をします。この例では矢印は `cout` の「c」の下に居るはずです。システムがどの文字が間違っているのかを視覚的に示してくれているのです。2つ目のエラーも表示されていて、こちらではコンパイラはendlがないと文句を言っています。当然ながら私達は、エラーを修正するには `<iostream.h>` をincludeすれば良いということを知っています。やってみましょう。一行目のコメントを外してもう一度コードを実行してください。
+
+
 ```cpp
 #include <iostream>
 ```
 
 When using openFrameworks, you have choice of tools and platforms. Each one shows you an error in a different way. Sometimes the editor will open up and highlight the code for you, placing an error talk bubble for more info. Other times, the editor will show nothing, but the compile output will show a raw error formatted similarly to the one above. While sometimes useful that we receive several errors from a compile, it can save a lot of grief if you focus on understanding and fixing the very first error that got reported. After fixing the top error, it is likely that all subsequent errors will elegantly disappear, having all been covered by your first fix.  By commenting out that single line of code at the top, we caused two errors.
 
+openFrameworksは様々なツールやプラットフォームで使うことができます。エラーの表示方法はそれぞれ異なります。エディターが開いてコードをハイライト表示してくれることもあれば、より多くの情報を表示するために吹き出しが使われることもあります。エディターには何も表示されず、コンパイル用の出力に生のエラーが上の例と同じような形で表示されることもあるでしょう。一度のコンパイルでいくつかのエラーが表示され、時としてそれが役に立つこともありますが、一番最初に表示されたエラーを集中的に読み解き修正した方がずっと楽ができるかもしれません。最初のエラーを修正するとそれによって、他のエラー見事に消えてくれることがあります。上の例では1行目をコメントアウトすることで2つのエラーが起きました。
+
 ### Namespaces at First Glance
+### 初めての名前空間
 
 Moving on to line 2, we see:
 
@@ -235,11 +263,16 @@ using namespace std;
 
 Let's say you join a social website and it asks you to choose a username. My name is Joshua Nimoy — username might be JNIMOY. I submit the page and it returns an error, telling me that username is already taken, and I have to choose another, since my father, Joseph Nimoy, registered before I did and he's got JNIMOY. And so I must use my middle initial T, and create a unique username, JTNIMOY. I just created and resolved a *namespace conflict*. A namespace is a group of unique names — none are identical. It's possible to have identical names, as long as they are a part of two separate namespaces. Namespaces help programmers avoid stepping on each other's toes by overwriting one another's symbols or hogging the good names. Namespaces also provide a neat and tidy organization system to help us find what we're looking for. In openFrameworks, everything starts with `of` . . . like `ofSetBackground` and `ofGraphics`. This is one technique to do namespace separation because it's less likely that any other names created by other programmers would begin with `of`. The same technique is used by OpenGL. Every name in the OpenGL API (Application Programming Interface) begins with `gl` like `glBlendFunc` and `glPopMatrix`. In C++ however, it is not necessary to have a strictly disciplined character prefix for your names, as the language provides its own namespacing syntax. In line 2, `using namespace std;` is telling the compiler that this .cpp file is going to use all the names in the `std` namespace. Spoiler-alert! those two names are `cout` and `endl`. Let us now do an experiment and comment out line 2, then run the code. What sort of error do you think the compiler will return?
 
+ソーシャル系のウェブサイトでユーザ名を選ぶように言われたとしましょう。私の名前はJoshua Nimoyなのでユーザ名はJNIMOYにします。送信ボタンを押すと、そのユーザ名は既に使われているというエラーが表示されたので他の名前を選ばなくてはなりません。父のJoseph Nimoyが先にJNIMOYで登録していたのです。私のミドルネームのイニシャルであるTを使ってまだ使われていないJTNIMOYというユーザ名にします。こうして私は名前空間の衝突（namespace conflict）を解決したのです。名前空間は一意な名前の集まりです。同じものは1つとしてありません。異なる2つの名前空間に属していれば、同じ名前が2つ存在しても構いません。名前空間はプログラマが他の人が書いた名前を上書きしたり、便利な名前を独り占めしたりしてお互いの邪魔をしてしまわないように助けてくれます。名前空間はまた、きちんと組織だった整理法を提供することで、欲しいものを見つける手助けもしてくれます。openFrameworksではすべての名前は `ofSetBackground`、 `ofGraphics`といったように `of` から始まります。これは、他のプログラマが `of` で始まる名前をつける可能性が低いことを利用した、名前空間を分けるテクニックの1つです。同じテクニックはOpenGLでも使われています。OpenGLのAPI（Application Programming Interface）はすべて `glBlendFunc`、`glPopMatrix` といったように `gl` から始まります。C++ではしかし、名前を付けるときに必ず接頭辞を規則として用いなくてはいけないわけではありません。C++には独自の名前空間のための構文があるからです。2行目の `using namespace std;` はコンパイラに、この.cppファイルは `std` 名前空間に属する名前を使うということを伝えています。先に種を明かしてしまうとこれは `cout` と `endl` のことです。ちょっとした実験として2行目をコメントアウトしてコードを実行してみましょう。コンパイラはどんなエラーを返すと思いますか。
+
+
 ```cpp
 /* using namespace std; */
 ```
 
 It's a very similar error as before, where it cannot find `cout` or `endl`, but this time, there are suggested alternatives added to the message list.
+
+前に見たものととてもよく似た `cout` または `endl` が見つからないというエラーですが、今回はメッセージに代替案が付け加わりました。
 
 ```
 prog.cpp:5:2: note: suggested alternative:
@@ -251,19 +284,31 @@ In file included from prog.cpp:1:0:
 
 The compiler says, "Hey, I searched for `cout` and I did find it in one of the namespaces included in the file. Here it is. `std::cout`" and in this case, the compiler is correct. It wants us to be *more explicit* with the way we type `cout`, so we express its namespace `std` (standard) on the left side, connected by a double colon (::). it's sort of like calling myself `Nimoy::Joshua`. Continuing our experiment, edit line 5 so that `cout` and `endl` have explicit namespaces added.
 
+コンパイラは、「`cout`を検索したら、読み込んだファイルの中にある名前空間の1つで　`std::cout`　ってのを見つけたよ。」と言っています。今回はコンパイラの言っていることが正解です。コンパイラは `cout` と打つ時に、その左側にそれが属する名前空間である `std` （standard）を2重のコロン（::）で繋げて明示して欲しい、と主張しているのです。自分のことを `Nimoy::Joshua` と呼ぶような感じです。実験を続けて5行めを編集して、 `cout` と `endl` の前に明示的に名前空間を付け加えてみましょう。
+
 ```cpp
 std::cout << "Hello World" << std::endl;
 ```
 
 When you run the code, you will see it compiles just fine, and succeeds in printing "Hello World". Even the line that says `using namespace std;` is still commented out. Now imagine you are writing a program to randomly generate lyrics of a song. Obviously, you would be using `cout` quite a bit. Having to type `std::` before all your `cout`s would get really tedious, and one of the reasons a programming language adds these features is to reduce typing. So although line 2 `using namespace std;` was not necessary, having it in place (along with other `using namespace` statements) can keep one's C++ code easy to type and read, through implied context.
 
+これを実行すると何の問題もなくコンパイルされて、「Hello World」と表示されるはずです。`using namespace std;` はまだコメントアウトされているのにです。ここであなたが歌の歌詞をランダムに生成するプログラムを書いているところを想像してください。当然、 `cout` を何度も使うことになるでしょう。全部の `cout` の前にいちいち `std::` と打つのはとても面倒です。プログラム言語にこういった機能がある理由の1つはタイピングの量を減らす為です。2行めの `using namespace std;` は必ずしも必要ではないけれど、これ（と、その他の `using namespace` で始まる文）を書いて暗黙的に文脈が示すことで、C++のコードを打ちやすく、また読みやすく保つことができるのです。
+
 Say I'm at a Scrabble party in Manhattan, and I am the only Josh. People can just call me Josh when it's my turn to play. However, if Josh Noble joins us after dinner, it gets a bit confusing and we start to call the Joshes by first and last name for clarity. In C++, the same is also true. I would be `Nimoy::Josh` and he would be `Noble::Josh`. It's alright to have two different `cout` names, one from the `std` namespace, and another from the `improved` namespace, as long as both are expressed with explicit namespaces; `std::cout` and `improved::cout`. In fact, the compiler will complain if you don't.
+
+マンハッタンでスクラブルのパーティーに来て、自分の名前をJoshとだけ書いたら、手番が来た時に他の人は私のことをJoshと呼ぶでしょう。しかし、ディナーの後にJosh Nobleが加わったとしたらちょっと紛らわしいので、はっきりさせる為に2人のJoshをファーストネームとラストネームの両方で呼ぶようになるでしょう。片方が `std` 名前空間に属していて、もう片方が `improved` に属しているのならば、 `cout` という名前が2つあっても構いません。名前空間は `std::cout`、`improved::cout` と明示的に示されている必要があります。もし書かなかった場合、コンパイラは文句を言うでしょう。
 
 You will see more double-colon syntax (::) when I introduce classes.
 
+後ほどクラスについて説明する箇所でまた、2重のコロン（::）を使った構文を見ることになります。
+
+
 ## Functions
+## 関数
 
 Moving on, let us take a look at line 4:
+
+先に進んで、4行目を見てみましょう。
 
 ```cpp
 int main() {
@@ -271,15 +316,23 @@ int main() {
 
 This is the first piece of code that has a beginning and an end, such that it "wraps around" another piece of code. But more importantly, a function *represents* the statements enclosed within it. The closing end of this *function* is the closing curly brace on line 7:
 
+これは他のコードを「包み込む」ような、始まりと終わりがあるコードの始まりの部分です。さらに大事なことに、関数は中に含まれている命令文を「代表して」示しています。この「関数」の終わりは7行めの波括弧が閉じる箇所です。
+
 ```cpp
 }
 ```
 
 In C++, we enclose groups of code statements inside functions, and each function can be seen as a little program inside the greater program, as in the simplified diagram in figure 9.
 
+C++では関数の中に命令文の集まりをまとめて書きます。図9で簡単なダイアグラムが示すように、それぞれの関数は大きなプログラムの中の小さなプログラムだとみなすことができます。
+
+
 ![図9: Many Functions](images/program-anatomy.png "Figure 9. A program contains many functions, and each function contains zero or more statements.")
 
 Each of these functions has a name by which we can call it. To call a function is to execute the code statements contained inside that function. The basic convenience in doing this is less typing, and we will talk about the other advantages later. Like a board game, a program has a starting position. More precisely, the program has an *entry-point* expected by the compiler to be there. That entry-point is a function called *main*. The code you write inside the *main* function is the first code that executes in your program, and therefore it is responsible for calling any other functions in your program. Who calls your *main* function? The operating system does! Let's break down the syntax of the main function in this demo. Again, for all you Processing coders, this is old news.
+
+それぞれの関数には呼び出すための名前が付いています。中に含まれている命令を実行するために関数を呼び出します。もっとも基本的なメリットはタイピングの量が少なくて済むことです。他のメリットについては後ほど説明します。ボードゲームのように、プログラムにはスタート地点があります。もっと正確に言うと、コンパイラはプログラムに「エントリーポイント」があることを期待しています。エントリーポイントは「main」と名付けられた関数です。「main」関数は、その中に書かれたコードがプログラムの中で最初に実行されるコードになるので、プログラムの中の他の全ての関数を呼び出す責任があります。誰が「main」関数を呼び出すのでしょう。オペレーションシステムです。このデモの中のmain関数の構文を分析してみましょう。Processingを使っている人にはお馴染みでしょう。
+
 
 ![図10: The Function](images/function-anatomy.png)
 
