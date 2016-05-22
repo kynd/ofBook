@@ -6,7 +6,13 @@
 >
 > **--Aleister Crowley, 1911**
 
+> 未来の魔術師は数式を用いるだろう
+>
+> **--Aleister Crowley, 1911**
+
 ## Look Alive!
+
+## さあ始めよう
 
 This chapter introduces you to writing small computer programs using the C++ language. Although I assume very little about your previous knowledge, the literacy you gain from this chapter will directly influence your comprehension in subsequent chapters of the book, as most other topics stand on the shoulders of this one. Furthermore, the lessons herein are cumulative, meaning you can't skip one of the topics or you will get lost. If you get stuck on one of the concepts, please seek help in understanding specifically the part that did not make sense before moving on to the next topic. Following the lessons with this sort of rigor ensures that not only will you get the most out of openFrameworks, but computers in general.
 
@@ -338,13 +344,25 @@ Each of these functions has a name by which we can call it. To call a function i
 
 When defining a function, the first token is the advertised return type. Functions can optionally return a value, like an answer to a question, a solution to a problem, the result of a task, or the product of a process. In this case, *main* promises to return an `int`, or *integer* type, which is a whole number with no fraction or decimal component. Next token is the name of our function. The system expects the word "main" in all lower-case, but you will later define your own functions and we will get into naming. Next is an opening and closing parenthesis. Yes, it seems kind of strange to have it there, since there is nothing inside it. Later, we will see what goes in there — but never leave out the pair of parentheses with functions because in a certain way, that is the major hint to the human that it's a function. In fact, from now on, when I refer to a function by name. I'll suffix it with a ( ), for example `main()` when the function requires no parameter and I'll suffix it with a (...), for example `main(...)`, when the function requires one or more parameters
 
+関数を定義するときに最初に書くのは、戻り値の型の宣言です。質問に対する答え、問題に対する解、ある仕事をした結果、といったように、関数は任意で戻り値を返すことができます。この例では「main」は `int`、つまり分数や小数部分を含まない「整数」型の値を返すことを約束しています。次に来るのは関数の名前です。ここでは「main」と全て小文字で書かれていること必要があります。後ほど自分でも関数を定義することになるので、命名方法についてもそこで説明します。次は始め丸括弧と終わり丸括弧です。中に何も書かれていないので、ここに括弧
+があるのは変な感じがしますね。後ほどこの中に何が書けるのかは説明しますが、とにかく関数につける括弧は省略しないようにしてください。ある意味、括弧は読む人にとってそれが関数であることを示す重要なヒントなのです。実際にここから私が関数のことを名前で示す際には、引数のない関数の場合は `main()`、1つかそれ以上の引数が必要な場合は `main(...)` と()をつけるようにします。
+
 Next, we see an opening curly bracket. Sometimes this opening curly bracket is on the same line as the preceding closing parenthesis, and other times, you will see it on its own new line. It depends on the personal style of the coder, project, or group — and both are fine. For a complete reference on different indent styles, see the Wikipedia article on Indent Style (http://en.wikipedia.org/wiki/Indent_style).
+
+そのあとには始め波括弧があります。この波括弧はその前の終わり丸括弧と同じ行に書かれることもあれば、別の行に書かれることもあります。これはコーダーやプロジェクト、グループのスタイルによるもので、どちらでも問題ありません。様々なスタイルについてはまとめて知りたい場合は、Wikipediaのインデントスタイルについての項（http://en.wikipedia.org/wiki/Indent_style）をご覧ください。
+
 
 In between this opening curly bracket and the closing one, we place our code statements that actually tell the computer to go do something. In this example, I only have one statement, and that is the required `return`. If you leave this out for a function whose return type is `int`, then the compiler will complain that you broke your promise to return an int. In this case, the operating system interprets a 0 as "nothing went wrong". Just for fun, see what happens when you change the 0 to a 1, and run the code.
 
+始め波括弧と終わり波括弧の間にはコンピュータが実際に行う何かを伝えるための命令文を書きます。上の例では、命令文は必須である `return` 1つしかありません。もしこれを戻り値の型が `int` になっている関数で省略すると、コンパイラは整数を返すという約束を破ったと文句を言ってくるでしょう。この例ではオペレーティングシステムは0を「何も問題なく実行された」という意味だと解釈します。ちょっとした遊びとして、0を1に書き換えてコードを実行したら何が起きるか見てみましょう。
+
 ## Custom Functions
 
+## カスタム関数
+
 We will now define our own function and make use of it as a word template. Type the sample code into your editor and run it.
+
+それではオリジナルの関数を定義して、それをテンプレートとして使ってみましょう。サンプルコードをエディターに入力して実行してください。
 
 ```cpp
 #include <iostream>
@@ -366,6 +384,8 @@ int main() {
 
 The output shows a familiar bedtime story.
 
+下記のように出力されすはずです。
+
 ```
 Hi there moon.
 Hi there red balloon.
@@ -377,6 +397,8 @@ Hi there bowl full of mush.
 In this new code, notice the second function `greet(...)` which looks the same but different from `main()`. It has the same curly brackets to hold the code block, but the return type is different. It has the same pair of parentheses, but this time there is something inside. And what about that required return statement? The *void* keyword is used in place of a return type when a function does not return anything. So, since `greet(...)` has a *void* return type, the compiler will not complain should you leave out the `return`. In the parentheses, you see `string person`. This is a parameter, an input-value for the function to use. In this case, it's a bit like find-and-replace. Down in `main()`, you see I call `greet(...)` five times, and each time, I put a different string in quotes between the parentheses. Those are *arguments*.
 
 As an aside, to help in the technicality of discerning between when to call them *arguments* and when to call them *parameters*, see this code example:
+
+このコードには `main()` と同じように見える別の関数、`greet(...)` があります。コードを挟み込む波括弧があるのは同じですが、戻り値の型が違います。同様に丸括弧がありますが、今回は間に何か書いてあります。必須だった `return` 文はどうでしょう。関数が何も返さない場合には、戻り値の型を指定する箇所で「void」キーワードを使います。`greet(...)` には「void」が戻り値の型として指定されているので、コンパイラは `return` が書かれていなくても文句を言いません。括弧の中には `string person` と書かれています。これはパラメーター、つまり関数が使うための入力値です。ここでは検索置換のようなことをしています。`main()` の中では `greet(...)` が5回呼び出されています。呼び出しの度に括弧の間に、クオーテーションマークに挟まれた異なる文字列が書かれています。これらは「引数」と呼ばれています。
 
 ```cpp
 
