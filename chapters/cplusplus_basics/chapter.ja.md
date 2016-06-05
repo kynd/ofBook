@@ -345,7 +345,7 @@ Each of these functions has a name by which we can call it. To call a function i
 When defining a function, the first token is the advertised return type. Functions can optionally return a value, like an answer to a question, a solution to a problem, the result of a task, or the product of a process. In this case, *main* promises to return an `int`, or *integer* type, which is a whole number with no fraction or decimal component. Next token is the name of our function. The system expects the word "main" in all lower-case, but you will later define your own functions and we will get into naming. Next is an opening and closing parenthesis. Yes, it seems kind of strange to have it there, since there is nothing inside it. Later, we will see what goes in there — but never leave out the pair of parentheses with functions because in a certain way, that is the major hint to the human that it's a function. In fact, from now on, when I refer to a function by name. I'll suffix it with a ( ), for example `main()` when the function requires no parameter and I'll suffix it with a (...), for example `main(...)`, when the function requires one or more parameters
 
 関数を定義するときに最初に書くのは、戻り値の型の宣言です。質問に対する答え、問題に対する解、ある仕事をした結果、といったように、関数は任意で戻り値を返すことができます。この例では「main」は `int`、つまり分数や小数部分を含まない「整数」型の値を返すことを約束しています。次に来るのは関数の名前です。ここでは「main」と全て小文字で書かれていること必要があります。後ほど自分でも関数を定義することになるので、命名方法についてもそこで説明します。次は始め丸括弧と終わり丸括弧です。中に何も書かれていないので、ここに括弧
-があるのは変な感じがしますね。後ほどこの中に何が書けるのかは説明しますが、とにかく関数につける括弧は省略しないようにしてください。ある意味、括弧は読む人にとってそれが関数であることを示す重要なヒントなのです。実際にここから私が関数のことを名前で示す際には、引数のない関数の場合は `main()`、1つかそれ以上の引数が必要な場合は `main(...)` と()をつけるようにします。
+ パラメータが必要ない関数の場合は `main()`、1つかそれ以上のパラメータが必要な場合は `main(...)` と()をつけるようにします。
 
 Next, we see an opening curly bracket. Sometimes this opening curly bracket is on the same line as the preceding closing parenthesis, and other times, you will see it on its own new line. It depends on the personal style of the coder, project, or group — and both are fine. For a complete reference on different indent styles, see the Wikipedia article on Indent Style (http://en.wikipedia.org/wiki/Indent_style).
 
@@ -396,9 +396,11 @@ Hi there bowl full of mush.
 
 In this new code, notice the second function `greet(...)` which looks the same but different from `main()`. It has the same curly brackets to hold the code block, but the return type is different. It has the same pair of parentheses, but this time there is something inside. And what about that required return statement? The *void* keyword is used in place of a return type when a function does not return anything. So, since `greet(...)` has a *void* return type, the compiler will not complain should you leave out the `return`. In the parentheses, you see `string person`. This is a parameter, an input-value for the function to use. In this case, it's a bit like find-and-replace. Down in `main()`, you see I call `greet(...)` five times, and each time, I put a different string in quotes between the parentheses. Those are *arguments*.
 
+このコードには `main()` と同じように見える別の関数、`greet(...)` があります。コードを挟み込む波括弧があるのは同じですが、戻り値の型が違います。同様に丸括弧がありますが、今回は間に何か書いてあります。必須だった `return` 文はどうでしょう。関数が何も返さない場合には、戻り値の型を指定する箇所で「void」キーワードを使います。`greet(...)` には「void」が戻り値の型として指定されているので、コンパイラは `return` が書かれていなくても文句を言いません。括弧の中には `string person` と書かれています。これはパラメータ、つまり関数が使うための入力値です。ここでは検索置換のようなことをしています。`main()` の中では `greet(...)` が5回呼び出されています。呼び出しの度に括弧の間に、クオーテーションマークに挟まれた異なる文字列が書かれています。これらは「引数」と呼ばれています。
+
 As an aside, to help in the technicality of discerning between when to call them *arguments* and when to call them *parameters*, see this code example:
 
-このコードには `main()` と同じように見える別の関数、`greet(...)` があります。コードを挟み込む波括弧があるのは同じですが、戻り値の型が違います。同様に丸括弧がありますが、今回は間に何か書いてあります。必須だった `return` 文はどうでしょう。関数が何も返さない場合には、戻り値の型を指定する箇所で「void」キーワードを使います。`greet(...)` には「void」が戻り値の型として指定されているので、コンパイラは `return` が書かれていなくても文句を言いません。括弧の中には `string person` と書かれています。これはパラメーター、つまり関数が使うための入力値です。ここでは検索置換のようなことをしています。`main()` の中では `greet(...)` が5回呼び出されています。呼び出しの度に括弧の間に、クオーテーションマークに挟まれた異なる文字列が書かれています。これらは「引数」と呼ばれています。
+余談になりますが、「引数（arguments）」と「パラメータ（parameter）」の厳密な使い分けについては、下記のサンプルコードをご覧ください。
 
 ```cpp
 
@@ -417,21 +419,35 @@ int main(){
 
 Getting back to the previous example, those five lines of code are all ***function calls***. They are telling `greet(...)` to execute, and passing it the one string argument so it can do its job. That one string argument is made available to `greet(...)`'s inner code via the argument called `person`. To see the order of how things happen, take a look at Figure 11.
 
+1つ前の例に戻ると、5行のコードは全て「関数呼び出し」になっています。これらの行は `greet(...)` に実行するよう指示し、そのために必要な文字列を1つ引数として渡しています。`greet(...)` の中のコードは、この文字列の引数を `person` というパラメータを通して利用することができます。何がどのような順番で起きているのかについては、図11を見てください。
+
 ![図11. Function Call Flow](images/function-call.png "Figure 11. Function Call Flow")
 
 The colorful line in Figure 11 is the path drawn by an imaginary playback head that steps over the code as it executes. We start at the blue part and go in through the main entry-point, then encounter `greet(...)`, which is where a *jump* happens. As the line turns green, it escapes out of `main()` temporarily so it can go follow along `greet(...)` for a while. About where the line turns yellow, you see it finished executing the containing code inside `greet(...)` and does a second jump (the return) this time going back to the previous saved place, where it continues to the next statement. The most obvious advantage we can see in this example is the reduction of complexity from that long `cout` statement to a simple call to `greet(...)`. If we must call `greet(...)` five times, having the routine *encapsulated* into a function gives it convenience power. Let's say you wanted to change the greeting from "Good night" to "Show's over ". Rather than updating all the lines of code you cut-and-pasted, you could just edit the one function, and all the uses of the function would change their behavior along with it, in a synchronized way. Furthermore, code can grow to be pretty complex. It helps to break it down into small routines, and use those routines as your own custom building blocks when thinking about how to build the greater software. By using functions, you are liberated from the need to meticulously represent every detail of your system; therefore a function is one kind of *abstraction* just like abstraction in art. This sort of abstraction is called *encapsulation of complexity* because it's like taking the big complex thing and putting it inside a nice little capsule, making that big complex thing seem smaller and simpler. It's a very powerful idea — not just in code.
 
+図11の色のついた線は、コードの実行に従って仮想の再生ヘッドが進んでいく軌跡です。青色の部分からスタートして、エントリーポイントから進み、`greet(...)` に出会ったらところでジャンプします。線が緑になり一時的に `main()` から抜け出して、少しの間 `greet(...)` に移ります。線が黄色に変わるところで、`greet(...)` の中のコードの実行が終わり、二度目のジャンプで元の場所に戻って次の命令へと続いて行きます。この例から見て取れる最も明らかな利点は、長くて複雑な `cout` の命令文を単純な `greet(...)` の呼び出しに変えて簡単にすることができることです。`greet(...)`　を5回も呼び出す必要があるのであれば、一連の動作を「カプセル化」して関数にしておくと便利です。挨拶の言葉を「Good night」から「Show's over」に変えたいとしましょう。カットアンドペーストで全部の行を書き換える代わりに、関数を1つだけ編集すれば、その関数を使っている全ての箇所の挙動が同時に変わります。コードは複雑になりがちです。小さな動作ごとに分けて、その動作を大きなソフトウェアを組み立てるための構成要素として考えると役に立ちます。関数を使うことで、システムを隅々まで全てにわたって記述しなくても済むようになります。そのため、関数は芸術における抽象と同じく、ある種の「抽象化」だと言えます。このタイプの抽象化は、大きくて複雑なものを、ちっぽけなカプセルの中にしまい込む
+ことで小さく簡単に見せるようなものなので、「複雑さのカプセル化（encapsulation of complexity - もっと標準的な訳語ってあるんでしょうか）」と呼ばれています。これはコードの話だけに留まらない、非常にパワフルな考え方です。
+
 ## Encapsulation of Complexity
+
+## 複雑さのカプセル化
 
 Imagine actor Laurence Fishburne wearing tinted pince-nez glasses, offering you two options that are pretty complicated to explain. On the one hand, he is willing to help you escape from the evil Matrix so that you may fulfill your destiny as the hacker hero, but it involves living life on life's terms and that is potentially painful but whatever. The story must go on and by the way, there is a pretty girl. On the other hand, he is also willing to let you forget this all happened, and mysteriously plant you back in your tiny apartment where you can go on living a lie, none the wiser. These two options are explained in the movie *The Matrix* and then the main character is offered the choice in the form of colored pills, as a way to simplify an otherwise wordy film scenario. The two complex choices are encapsulated into a simple analogy that is much easier for movie audiences to swallow. See Figure 12.
 
-![図12. Red Pill and Blue Pill from The Matrix](images/red-blue-pills.png "Figure 12. Red Pill and Blue Pill from The Matrix")
+つるなしのサングラスをかけたローレンス・フィッシュバーンが、説明するにはとても複雑な二種類の選択肢を提示するところを想像してください。まず彼は、あなたが悪意に満ちたマトリックスから抜け出し、ハッカーのヒーローとしての運命を全うする手助けをしたいと思っています。しかしそれは命がけであり、苦痛以外の何物でもないかもしれません。話にはさらに続きがあって、ちなみに素敵な女の子もいますよ。一方で彼は、あなたに起きたことを全て忘れさせて謎の手段で小さなアパートに戻し、何も理解しないまま嘘の人生を生きることようにすることも厭いません。2つの選択肢は映画「マトリックス」の中で語られたもので、シナリオを説明だらけにせず簡潔にする手段として、この後主人公には2色の錠剤が差し出されます。2つの複雑な選択肢は観客にとってずっと飲み込みやすい形にカプセル化されました。図12を見てください。
+
+![図12. 映画「マトリックス」から、赤と青のカプセル](images/red-blue-pills.png "Figure 12. Red Pill and Blue Pill from The Matrix")
 
 Rather than repeating back the entire complicated situation, Neo (the main character) needed only to swallow one of the pills. Even if it were real medicine, the idea of encapsulating complexity still applies. Most of us do not have the expertise to practice medicine in the most effective way, and so we trust physicians and pharmacologists to create just the right blend of just the right herbs and chemicals. When you swallow a pill, it is like calling that function because you have the advantage of not needing to understand the depths of the pill. You simply trust that the pill will cause an outcome. The same is true with code. Most of the time, a function was written by someone else, and if that person is a good developer, you are free to remain blissfully ignorant of their function's inner workings as long as you grasp how to properly call their function. In this way, you are the *higher-level* coder, meaning that you simply call the function but you did not write it. Someone who creates a project in openFrameworks is sitting on the shoulders of the openFrameworks layer. openFrameworks sits on the shoulders of the OpenGL Utility Toolkit, which sits on OpenGL itself, and so on. In other words, an openFrameworks project is a *higher-level* application of C++, a language with a reputation for *lower-level* programming. As illustrated in Figure 13, I sometimes run into a problem when I tell people I wrote an interactive piece in C++.
 
-![図13. Standing on Shoulders of Giants](images/shoulders-of-giants.png "Figure 13. Standing on Shoulders of Giants")
+込み入った状況説明を繰り返す代わりに、ネオ（主人公）はただどちらかの錠剤を飲めば良いのです。複雑なものをカプセル化するという考え方は、これが本物の薬だったとしても当てはまります。私たちのほとんどには効果的に薬を処方できるほどの専門知識を持っていないので、医師や薬理学者が正しい薬草や化学物質を丁度よく混ぜてくれると信頼するのです。薬を飲むのは関数を呼び出すのに似ていて、その薬について深く知る必要がないという利点があります。その薬が結果を出してくれるとただ信じるだけです。コードについても同じことが言えます。多くの場合、関数は誰か他の人が書いたものです。もしその人が優秀な開発者であれば、正しい呼び出し方を理解している限り、関数が中で何をしているかには知らずに済ますことができます。関数を呼び出すが自分では書いていない、という意味であなたは「高級な（high-level）」コーダーになります。openFrameworksでプロジェクトを作る人は、openFrameworksの肩を借りていることになります。openFrameworksはOpenGL Utility Toolkitを利用しており、そのOpenGL Utility ToolkitはOpenGL自体の上に成り立っていて、とこの関係は続きます。言い換えればopenFrameworksのプロジェクトは「低級」言語として名高いC++を用いた、「高級な」アプリケーションだと言えます。
+私は時々、誰かにC++でインタラクティブな作品を作ったと言っては、図13に描かれているように困ったことになることがあります。
+
+
+![図13. 巨人たちの肩を借りる](images/shoulders-of-giants.png "Figure 13. Standing on Shoulders of Giants")
 
 There are a few advantages to using C++ over the other options (mostly scripting) for your new media project. The discussion can get quite religious (read: heated) among those who know the details. If you seek to learn C++, then usually it is because you seek faster runtime performance, because C++ has more libraries that you can snap into your project, or because your mentor is working in that language. An oF project is considered higher-level because it is working with a greater encapsulation of complexity, and that is something to be proud of.
+
 
 ## Variables (part 1)
 
